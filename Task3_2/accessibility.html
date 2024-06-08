@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Comprehensive Web Form</title>
+</head>
+<body>
+    <h1>Accessible Comprehensive Web Form</h1>
+    <form action="#" method="post">
+        <!-- Email Input Field -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true"><br><br>
+        
+        <!-- Number Input Field -->
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter a quantity" min="1" max="100" step="1" required aria-required="true"><br><br>
+        
+        <!-- Date Input Field -->
+        <label for="date">Select a Date:</label>
+        <input type="date" id="date" name="date" placeholder="yyyy-mm-dd" min="2023-01-01" max="2025-12-31" required aria-required="true"><br><br>
+        
+        <!-- Range Input Field -->
+        <label for="rating">Rating (0 to 10):</label>
+        <input type="range" id="rating" name="rating" min="0" max="10" oninput="updateRangeValue(this.value)" required aria-required="true">
+        <span id="rangeValue">5</span><br><br>
+        
+        <!-- Color Input Field -->
+        <label for="favcolor">Select a Color:</label>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+        
+        <!-- Select Menu -->
+        <label for="language">Favorite Programming Language:</label>
+        <select id="language" name="language" aria-required="true">
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="csharp">C#</option>
+            <option value="ruby">Ruby</option>
+        </select><br><br>
+        
+        <!-- Radio Buttons -->
+        <fieldset>
+            <legend>Level of Expertise:</legend>
+            <input type="radio" id="beginner" name="expertise" value="beginner" required aria-required="true">
+            <label for="beginner">Beginner</label><br>
+            <input type="radio" id="intermediate" name="expertise" value="intermediate">
+            <label for="intermediate">Intermediate</label><br>
+            <input type="radio" id="advanced" name="expertise" value="advanced">
+            <label for="advanced">Advanced</label>
+        </fieldset><br>
+        
+        <!-- Checkboxes -->
+        <fieldset>
+            <legend>Preferred Development Platforms:</legend>
+            <input type="checkbox" id="web" name="platform" value="web">
+            <label for="web">Web</label><br>
+            <input type="checkbox" id="mobile" name="platform" value="mobile">
+            <label for="mobile">Mobile</label><br>
+            <input type="checkbox" id="desktop" name="platform" value="desktop">
+            <label for="desktop">Desktop</label>
+        </fieldset><br>
+        
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        function updateRangeValue(val) {
+            document.getElementById('rangeValue').innerText = val;
+        }
+    </script>
+</body>
+</html>
